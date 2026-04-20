@@ -24,7 +24,7 @@ struct FloatingImage {
 
 impl FloatingImage {
     fn new(width: u32, height: u32, name: String) -> Self {
-        let buffer_capacity: i32 = 3_655_744;
+        let buffer_capacity: u32 = width * height * 4;
         let buffer: Vec<u8> = Vec::with_capacity(buffer_capacity.try_into().unwrap());
 
         FloatingImage {
