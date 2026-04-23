@@ -1,4 +1,5 @@
 use image::{DynamicImage, GenericImageView, ImageFormat, ImageReader, imageops::FilterType::Triangle, ImageError};
+use::rayon::prelude::*;
 
 #[derive(Debug)]
 pub enum ImageDataErrors {
@@ -69,6 +70,10 @@ impl FloatingImage {
     pub fn data(&self) -> &Vec<u8> {
         &self.data
     }
+}
+
+pub fn combine_images_parallel(image_1: DynamicImage, Image_2: DynamicImage){
+    todo!()
 }
 
 pub fn find_image_from_path(path: String) -> Result<(DynamicImage, ImageFormat), ImageDataErrors> {
